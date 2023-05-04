@@ -16,21 +16,25 @@ class LocationsListViewController: UIViewController {
     
     
     var weatherLocations:[WeatherLocation] = []
+    var selectedLocationIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var weatherLocation = WeatherLocation(name: "Samara", latitude: 0, longitude: 0)
-        weatherLocations.append(weatherLocation)
-        weatherLocation = WeatherLocation(name: "Ulianovsk", latitude: 0, longitude: 0)
-        weatherLocations.append(weatherLocation)
-        weatherLocation = WeatherLocation(name: "Ufa", latitude: 0, longitude: 0)
-        weatherLocations.append(weatherLocation)
+//        var weatherLocation = WeatherLocation(name: "Samara", latitude: 0, longitude: 0)
+//        weatherLocations.append(weatherLocation)
+//        weatherLocation = WeatherLocation(name: "Ulianovsk", latitude: 0, longitude: 0)
+//        weatherLocations.append(weatherLocation)
+//        weatherLocation = WeatherLocation(name: "Ufa", latitude: 0, longitude: 0)
+//        weatherLocations.append(weatherLocation)
         
         tableVeiw.dataSource = self
         tableVeiw.delegate = self
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        selectedLocationIndex = tableVeiw.indexPathForSelectedRow!.row
+    }
 
     @IBAction func editButtonPressed(_ sender: UIBarButtonItem) {
         if tableVeiw.isEditing {
