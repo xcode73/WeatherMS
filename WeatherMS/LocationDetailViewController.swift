@@ -171,6 +171,10 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         print("👮🏻‍♀️👮🏻‍♀️ Checking authentication status.")
+        handleAuthorizationStatus()
+    }
+    
+    func handleAuthorizationStatus() {
         switch locationManager.authorizationStatus {
         case .authorizedAlways, .authorizedWhenInUse:
             self.locationManager.requestLocation()
@@ -179,15 +183,26 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
         case .restricted:
             self.oneButtonAlert(title: "Location services denied", message: "It may be that parental control are restricting location use in this app.")
         case .denied:
-            //TODO: Handle alert w/ability to change status
+            showAlerToPrivicySettings(title: "User has not authorized location services", message: "Select 'Settings' below to enable device settings and enable location service for this app.")
             break
         default:
             print("DEVELOPER ALERT: Unknown case of status in handleAuthenticalStatus \(locationManager.authorizationStatus)")
         }
     }
     
-    func handleAuthenticalStatus(status: CLAuthorizationStatus) {
-        
+    func showAlerToPrivicySettings(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        guard let settingsURL = URL(string: UIApplication.openSettingsURLString) else {
+            print("Something went wrong getting the UIApplication.openSettingsURLString")
+            return
+        }
+        let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) in
+            UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(settingsAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
