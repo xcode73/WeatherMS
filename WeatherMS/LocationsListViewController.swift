@@ -73,7 +73,7 @@ extension LocationsListViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         var content = cell.defaultContentConfiguration()
         content.text = weatherLocations[indexPath.row].name
-        content.secondaryText = "Lat:\(weatherLocations[indexPath.row].latitude) Lon:\(weatherLocations[indexPath.row].longitude)"
+//        content.secondaryText = "Lat:\(weatherLocations[indexPath.row].latitude) Lon:\(weatherLocations[indexPath.row].longitude)"
         cell.contentConfiguration = content
         return cell
     }
@@ -90,6 +90,19 @@ extension LocationsListViewController: UITableViewDelegate, UITableViewDataSourc
         let itemToMove = weatherLocations[sourceIndexPath.row]
         weatherLocations.remove(at: sourceIndexPath.row)
         weatherLocations.insert(itemToMove, at: destinationIndexPath.row)
+    }
+    
+    //MARK: - tableView methods to freeze the first cell
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return (indexPath.row != 0 ? true : false)
+    }
+    
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return (indexPath.row != 0 ? true : false)
+    }
+    
+    func tableView(_ tableView: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        return (proposedDestinationIndexPath.row == 0 ? sourceIndexPath : proposedDestinationIndexPath)
     }
 }
 

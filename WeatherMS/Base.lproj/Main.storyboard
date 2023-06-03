@@ -263,10 +263,10 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q2X-qI-HLz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="837"/>
+                                <rect key="frame" x="0.0" y="20" width="414" height="817"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="pMj-hH-b4X" detailTextLabel="oV3-nF-aQe" style="IBUITableViewCellStyleSubtitle" id="jj2-vx-lu2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="pMj-hH-b4X" style="IBUITableViewCellStyleDefault" id="jj2-vx-lu2">
                                         <rect key="frame" x="0.0" y="50" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jj2-vx-lu2" id="eW3-gq-Fi8">
@@ -274,14 +274,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pMj-hH-b4X">
-                                                    <rect key="frame" x="20" y="6" width="25" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oV3-nF-aQe">
-                                                    <rect key="frame" x="20" y="22.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -305,7 +298,7 @@
                             <constraint firstItem="hXg-al-ib6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eH8-sB-oAE"/>
                             <constraint firstItem="hXg-al-ib6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fSb-Qj-URg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q2X-qI-HLz" secondAttribute="trailing" id="h0a-Yr-tcP"/>
-                            <constraint firstItem="Q2X-qI-HLz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xtM-eI-Xr3"/>
+                            <constraint firstItem="Q2X-qI-HLz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="xtM-eI-Xr3"/>
                         </constraints>
                     </view>
                     <connections>

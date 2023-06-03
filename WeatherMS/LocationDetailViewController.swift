@@ -206,7 +206,7 @@ extension LocationDetailViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        // TODO: Deal with change location
+        
         let currentLocation = locations.last ?? CLLocation()
         print("Current location is \(currentLocation.coordinate.latitude), \(currentLocation.coordinate.longitude)")
         let geocoder = CLGeocoder()
