@@ -6,7 +6,7 @@ WeatherMS app using data from the OpenWeather and Google Places
 This project is written in Swift 5 and requires Xcode 13+ to build and run.
 
 # Demo
-![]([https://github.com/Your_Repository_Name/Your_GIF_Name.gif](https://github.com/xcode73/WeatherMS/blob/main/Simulator%20Screen%20Recording%20-%20iPhone%2014%20Pro%20-%202023-06-04%20at%2013.33.09.gif))
+![Simulator Screen Recording - iPhone 14 Pro - 2023-06-04 at 13 33 09](https://github.com/xcode73/WeatherMS/assets/11060275/340408cc-fa88-4c67-93f1-5c23f8f4f5ed)
 
 # Features
 Swift Programming Language
